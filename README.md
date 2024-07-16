@@ -579,3 +579,59 @@ ANALGESIA
 RICE
 RETURN ADVICE
 MC X 1/7
+
+DERM HISTORY TAKING
+Shaping Letters Into Words: Further
+Charaderization of Identified Lesions
+• Color Pink, red, purple (purpuric lesions do not blanch with pressure with a glass slide
+[diascopy]), white, tan, brown, black. blue, gray, and yellow. The color can be uniform or
+variegated.
+• Margination Well (can be traced with the tip of a pencil) and ill defined.
+• Shape Round, oval, polygonal. polycyclic, annular (ring-shaped), iris, serpiginous
+(snakelike), umbilicated
+• Palpation Consider (1) consistency {soft, firm, hard, fluctuant, boardlike), (2) deviation in
+temperature (hot, cold), and (3) mobility. Note presence of tenderness, and estimate the depth
+of the lesion (i.e., dermal or subcutaneous). Forming Sentences and Understanding
+the Text: Evaluation of Arrangement,Patterns, and Distribution
+• Number Single or multiple lesions.
+• Arrangement Multiple lesions may be (1) grouped: herpetifonn, arciform, annular,
+reticulated (net-shaped), linear, serpiginous (snakelike) or (2) disseminated: scattered discrete
+lesions.
+• Confluence Yes or no.
+• Distribution Consider (1) extent: isolated (single lesions), localized, regional, generalized,
+universal. and (2) pattern: symmetric, exposed areas, sites of pressure, intertriginous
+area, follicular localization. random,following
+dennatomes or Blaschko lines.
+
+HX
+Demographica Age, race, sex, and occupation
+1. Constitutional symptoms:
+Acute illness" syndrome: headaches,chills, feverishness, and weakness.
+chronic illness" syndrome: fatigue, weakness, anorexia, weight loss, and malaise.
+2. History of skin lesions.  key questions:
+• When t Onset
+• Wheret Site of onset
+• Does it itch or burtt Symptoms
+• How has it spread (pattern of spread)t
+Evolution
+• How have individual lesions changedt
+Evolution
+• Provocative factorst Heat, cold, sun, exercise, travel history, drug ingestion,
+pregnancy, season
+o Previous treatment(s)t Topical and systemic
+3 . General history of present illne111 aa indicated by clinical situation, with particular
+attention to conatitutional and prodromal symptoms.
+4. Put medical hiatory:
+• Operations
+• Illnesses (hospitalizedt)
+• Allergies, especially drug allergies
+• Medications (present and past)
+• Habits (smoking, alcohol intake, drug
+abuse)
+• Atopic history {asthma, hay fever,
+eczema)
+5. Family medical history (particularly of psoriasis, atopy, melanoma, xanthomas, tuberous sclerosis).
+6. Social hiatory, with particular reference to occupation, hobbies, exposure, travel, or
+injecting drug use.
+7. Sexual history: histury of risk factors of mv: blood transfusions, IV clrup, sexually
+active, multiple partners, STDs
