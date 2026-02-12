@@ -1,119 +1,561 @@
+/* ── Reset & Base ────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-  }
-  
-  .container {
-    margin-top: 2rem;
-  }
-  
-  .form-container {
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  h3 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  .form-control {
-    border-radius: 4px;
-  }
-  
-  input[type="text"],
-  input[type="number"],
-  input[type="date"],
-  select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #dbebff;
-  }
-  
-  input[readonly] {
-    background-color: #f5f5f5;
-  }
-  
-/* Styling for textareas */
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #dbebff;
-    border-radius: 4px;
-    resize: vertical; /* Allow vertical resizing */
-    min-height: 200px; /* Set a minimum height */
-  }
-  
-  textarea[readonly] {
-    background-color: #F4F9FF;
-  }
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  color: #1e293b;
+  background-color: #f1f5f9;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
 
-  #searchResults {
-    display: none;
-    border: 1px solid #ccc;
-    max-height: 150px;
-    overflow-y: auto;
-  }
-  
-  #searchResults div {
-    padding: 8px;
-    cursor: pointer;
-  }
-  
-  #searchResults div:hover {
-    background-color: #f4f4f4;
-  }
-  .copy-button {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 0.8rem;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+/* ── Tab Bar ─────────────────────────────────────── */
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
 
-  /* Style for the copy icon */
-  .material-icons {
-    font-size: 10px;
-    margin-right: 5px;
-  }
-  
-  h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    font-weight: normal ;
-  }
+.tab-button {
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #94a3b8;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  letter-spacing: 0.01em;
+  transition: color 0.15s, border-color 0.15s;
+}
 
-  .editor-buttons {
-    display: flex;
-    align-items: center; /* Add this line */
-    margin-bottom: 10px;
-  }
-  
-  .editor-button {
-    background-color: #e7e7e7;
-    border: none;
-    color: black;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .editor-button:hover {
-    background-color: #007bff;
-  }
-  
-/* Add this CSS to your styles.css file */
+.tab-button:hover {
+  color: #475569;
+}
+
+.tab-button.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* ── Layout ──────────────────────────────────────── */
+.container {
+  margin-top: 16px;
+  padding-bottom: 24px;
+}
+
+.form-container {
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+/* ── Headings ────────────────────────────────────── */
+h2 {
+  margin: 14px 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
 .form-group h2 {
-  margin: 0; /* Remove default margin */
+  margin: 0 0 6px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1e293b;
+}
+
+/* ── Inputs & Selects ────────────────────────────── */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #1e293b;
+  background-color: #ffffff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+input[type="text"]::placeholder {
+  color: #94a3b8;
+}
+
+input[readonly] {
+  background-color: #f8fafc;
+}
+
+/* ── Textareas ───────────────────────────────────── */
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #1e293b;
+  background-color: #ffffff;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+textarea[readonly] {
+  background-color: #f8fafc;
+  color: #334155;
+  cursor: default;
+}
+
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* ── Search Results Dropdown ─────────────────────── */
+#searchResults {
+  display: none;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#searchResults div {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #475569;
+  transition: background-color 0.1s;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+#searchResults div:last-child {
+  border-bottom: none;
+}
+
+#searchResults div:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+#searchResults div.highlighted {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+/* ── Copy Buttons (blue, inline with fields) ─────── */
+.copy-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  padding: 5px 12px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.copy-button:hover {
+  background-color: #1d4ed8;
+}
+
+.copy-button:active {
+  background-color: #1e40af;
+}
+
+/* ── Material Icons ──────────────────────────────── */
+.material-icons {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* ── Editor Toolbar Buttons ──────────────────────── */
+.editor-buttons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.editor-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.editor-button:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+.editor-button:active {
+  background-color: #cbd5e1;
+}
+
+.editor-button .material-icons {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* ── Scrollbar (Webkit) ──────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* ── Paeds Dosing Tab ────────────────────────────── */
+.paeds-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.paeds-input-group {
+  flex: 1;
+}
+
+.paeds-input-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.paeds-input-group input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.paeds-input-group input[type="number"]:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Search results dropdown */
+#paedsMedResults {
+  display: none;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 240px;
+  overflow-y: auto;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#paedsMedResults div {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.1s;
+}
+
+#paedsMedResults div:last-child {
+  border-bottom: none;
+}
+
+#paedsMedResults div:hover {
+  background-color: #eff6ff;
+}
+
+.paeds-result-cat {
+  color: #94a3b8;
+  font-weight: 400;
+  margin-left: 6px;
+  font-size: 11px;
+}
+
+.paeds-no-result {
+  color: #94a3b8 !important;
+  cursor: default !important;
+  font-style: italic;
+}
+
+/* Selected medication chips */
+.paeds-selected-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.paeds-selected-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #1e40af;
+}
+
+.paeds-chip-remove {
+  background: none;
+  border: none;
+  color: #93c5fd;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+}
+
+.paeds-chip-remove:hover {
+  color: #1e40af;
+}
+
+/* Empty state */
+.paeds-empty {
+  text-align: center;
+  color: #94a3b8;
+  padding: 60px 20px;
+  font-size: 14px;
+}
+
+/* Dosing card */
+.paeds-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.paeds-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.paeds-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.paeds-card-category {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.paeds-remove-btn {
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+.paeds-remove-btn:hover {
+  color: #ef4444;
+}
+
+.paeds-formula {
+  font-size: 12px;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.paeds-notes {
+  font-size: 11px;
+  color: #f59e0b;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Dosing table */
+.paeds-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.paeds-table th {
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.paeds-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.paeds-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.paeds-label-cell {
+  font-weight: 600;
+  color: #475569;
+  white-space: nowrap;
+}
+
+/* Highlighted matching row */
+.paeds-row-match {
+  background-color: #ecfdf5 !important;
+}
+
+.paeds-row-match td {
+  color: #065f46 !important;
+  font-weight: 600;
+}
+
+.paeds-row-match .paeds-label-cell {
+  position: relative;
+  padding-left: 20px;
+}
+
+.paeds-row-match .paeds-label-cell::before {
+  content: "\25B6";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 8px;
+  color: #10b981;
+}
+
+/* Contraindicated / danger row */
+.paeds-row-danger {
+  background-color: #fef2f2 !important;
+}
+
+.paeds-row-danger td {
+  color: #991b1b !important;
+  font-weight: 600;
+}
+
+.paeds-cell-danger {
+  color: #dc2626 !important;
+  font-weight: 700 !important;
+}
+
+.paeds-cell-na {
+  color: #cbd5e1 !important;
 }
