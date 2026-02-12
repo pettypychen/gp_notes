@@ -61,11 +61,12 @@ document.addEventListener("DOMContentLoaded", function () {
     ixOutput.value = entry.Ix;
     txOutput.value = entry.Tx.replace(/\n+/g, "\n");
 
-    // Clear editor and populate with Hx + OE
+    // Clear editor and populate with Hx + OE + Tx
     editor.value = "";
     var parts = [];
     if (entry.Hx) parts.push(entry.Hx.replace(/\n+/g, "\n"));
     if (entry.OE) parts.push(entry.OE.replace(/\n+/g, "\n"));
+    if (entry.Tx) parts.push(entry.Tx.replace(/\n+/g, "\n"));
     appendToEditor(parts.join("\n\n"));
 
     searchResults.style.display = "none";
