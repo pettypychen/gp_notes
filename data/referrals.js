@@ -31,7 +31,7 @@ window.REFERRALS = [
   },
   {
     "id": "gs-elevated_cea",
-    "name": "Gastroenterology - Elevated CEA",
+    "name": "General Surgery - Elevated CEA",
     "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Gastroenterology / General Surgery\nReason: Elevated CEA for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Gastroenterology/General Surgery Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have an elevated CEA on routine bloods.\n\nCEA: __ ng/mL (Date: __)\nSmoking: __\nSymptoms: Nil weight loss, nil change in bowel habits, nil abdominal pain, nil PR bleeding\nPrevious colonoscopy: __\nFHx GI malignancy: __\n\nO/E:\nAbdomen: Soft nontender, nil palpable mass\nDRE: __\n\nKindly arrange further workup (colonoscopy, CT abdomen/pelvis).\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
   },
   {
