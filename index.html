@@ -16,6 +16,7 @@
     <button class="tab-button active" data-tab="tab-soap">SOAP Notes</button>
     <button class="tab-button" data-tab="tab-referrals">Referrals</button>
     <button class="tab-button" data-tab="tab-paeds">Paeds Dosing</button>
+    <button class="tab-button" data-tab="tab-abx">Antimicrobial</button>
   </div>
 
   <!-- SOAP Notes tab -->
@@ -140,9 +141,42 @@
     </div>
   </div>
 
+  <!-- Antimicrobial Guidelines tab -->
+  <div id="tab-abx" class="tab-panel">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-container abx-sidebar">
+            <h2>Search:</h2>
+            <input type="text" id="abxSearch" placeholder="Search indications..." autocomplete="off">
+            <div id="abxSearchResults"></div>
+            <h2>Systems:</h2>
+            <div id="abxSystemList"></div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="abx-toolbar">
+            <label class="abx-toggle">
+              <input type="checkbox" id="abxPcnToggle">
+              <span class="abx-toggle-slider"></span>
+              <span class="abx-toggle-text">Penicillin allergy</span>
+            </label>
+            <label class="abx-toggle">
+              <input type="checkbox" id="abxOpToggle">
+              <span class="abx-toggle-slider"></span>
+              <span class="abx-toggle-text">Outpatient only</span>
+            </label>
+          </div>
+          <div id="abxContent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="data/conditions.js"></script>
   <script src="data/referrals.js"></script>
   <script src="data/paeds.js"></script>
+  <script src="data/antimicrobial.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

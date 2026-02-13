@@ -383,4 +383,328 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initial render
   renderPaedsTables();
+
+  // --- Antimicrobial Guidelines tab ---
+  var abxData = window.ANTIMICROBIAL || [];
+  var abxSearch = document.getElementById("abxSearch");
+  var abxSearchResults = document.getElementById("abxSearchResults");
+  var abxSystemList = document.getElementById("abxSystemList");
+  var abxContent = document.getElementById("abxContent");
+  var abxPcnToggle = document.getElementById("abxPcnToggle");
+  var abxOpToggle = document.getElementById("abxOpToggle");
+  var abxActiveSystem = null;
+  var abxSearchIdx = -1;
+  // Track what's currently displayed so toggles can re-render
+  var abxCurrentView = { type: "empty" }; // {type:"empty"} | {type:"system",sys} | {type:"cards",inds,sys}
+
+  // GP-common outpatient patterns for matching
+  var abxGpCommonNames = [
+    "acute cystitis", "copd", "cellulitis (mild", "bronchiectasis (mild",
+    "community-acquired pneumonia (mild", "pyelonephritis (outpatient",
+    "pelvic inflammatory disease (mild", "carbuncles", "acute prostatitis",
+    "infected foot wound with diabetes/pvd (community-acquired, non-limb"
+  ];
+
+  function abxIsOutpatient(ind) {
+    var n = ind.name.toLowerCase();
+    return n.includes("outpatient") || n.includes("mild") || n.includes("curb 0");
+  }
+
+  function abxIsGpCommon(ind) {
+    var n = ind.name.toLowerCase();
+    return abxGpCommonNames.some(function (pat) { return n.includes(pat); });
+  }
+
+  function abxEscape(str) {
+    var div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function abxFormatText(str) {
+    if (!str) return "";
+    return abxEscape(str).replace(/\n/g, "<br>");
+  }
+
+  function abxCopyText(text) {
+    copyToClipboard(text);
+  }
+
+  function abxFilterIndications(inds) {
+    if (!abxOpToggle.checked) return inds;
+    return inds.filter(abxIsOutpatient);
+  }
+
+  function abxRenderSystemList() {
+    var html = "";
+    abxData.forEach(function (sys) {
+      var filteredCount = abxFilterIndications(sys.indications).length;
+      var activeClass = abxActiveSystem === sys.system ? " abx-system-active" : "";
+      if (abxOpToggle.checked && filteredCount === 0) return; // hide empty systems
+      html += '<div class="abx-system-item' + activeClass + '" data-system="' + abxEscape(sys.system) + '">';
+      html += '<div class="abx-system-name">' + abxEscape(sys.system) + '</div>';
+      html += '<div class="abx-system-count">' + filteredCount + '</div>';
+      html += '</div>';
+      if (abxActiveSystem === sys.system) {
+        html += '<div class="abx-indication-list">';
+        abxFilterIndications(sys.indications).forEach(function (ind) {
+          var origIdx = sys.indications.indexOf(ind);
+          var gpClass = abxIsGpCommon(ind) ? " abx-gp-common" : "";
+          html += '<div class="abx-indication-item' + gpClass + '" data-system="' + abxEscape(sys.system) + '" data-idx="' + origIdx + '">' + abxEscape(ind.name) + '</div>';
+        });
+        html += '</div>';
+      }
+    });
+    abxSystemList.innerHTML = html;
+
+    abxSystemList.querySelectorAll(".abx-system-item").forEach(function (el) {
+      el.addEventListener("click", function () {
+        var sys = el.dataset.system;
+        if (abxActiveSystem === sys) {
+          abxActiveSystem = null;
+          abxRenderSystemList();
+          abxShowView({ type: "empty" });
+        } else {
+          abxActiveSystem = sys;
+          abxRenderSystemList();
+          var sysObj = abxData.find(function (s) { return s.system === sys; });
+          if (sysObj) abxShowView({ type: "system", sys: sysObj });
+        }
+      });
+    });
+
+    abxSystemList.querySelectorAll(".abx-indication-item").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var sys = abxData.find(function (s) { return s.system === el.dataset.system; });
+        if (sys) {
+          var ind = sys.indications[parseInt(el.dataset.idx)];
+          if (ind) abxShowView({ type: "cards", inds: [ind], sys: sys });
+        }
+      });
+    });
+  }
+
+  function abxRenderCard(ind, sys) {
+    var pcn = abxPcnToggle.checked;
+    var html = '<div class="abx-card">';
+    html += '<div class="abx-card-header">';
+    html += '<div class="abx-card-title">' + abxEscape(ind.name);
+    if (abxIsGpCommon(ind)) html += ' <span class="abx-gp-badge">GP</span>';
+    html += '</div>';
+    html += '<div class="abx-card-meta">';
+    if (sys) html += '<span class="abx-card-system">' + abxEscape(sys.system) + '</span>';
+    if (ind.duration) html += '<span class="abx-card-duration">' + abxEscape(ind.duration) + '</span>';
+    html += '</div>';
+    html += '</div>';
+
+    html += '<div class="abx-card-body">';
+
+    // First-line
+    if (ind.firstLine) {
+      var flClass = pcn ? " abx-dimmed" : "";
+      html += '<div class="abx-therapy-section' + flClass + '">';
+      html += '<div class="abx-therapy-label">FIRST-LINE THERAPY';
+      html += '<button class="abx-copy-btn" data-text="' + abxEscape(ind.firstLine) + '" title="Copy"><span class="material-icons">content_copy</span></button>';
+      html += '</div>';
+      html += '<div class="abx-therapy-text">' + abxFormatText(ind.firstLine) + '</div>';
+      html += '</div>';
+    }
+
+    // Alternative
+    if (ind.alternative) {
+      var altClass = pcn ? " abx-highlighted" : "";
+      html += '<div class="abx-therapy-section abx-alt' + altClass + '">';
+      html += '<div class="abx-therapy-label">ALTERNATIVE (IF PENICILLIN ALLERGY)';
+      html += '<button class="abx-copy-btn" data-text="' + abxEscape(ind.alternative) + '" title="Copy"><span class="material-icons">content_copy</span></button>';
+      html += '</div>';
+      html += '<div class="abx-therapy-text">' + abxFormatText(ind.alternative) + '</div>';
+      html += '</div>';
+    }
+
+    // Remarks (collapsible, open by default)
+    if (ind.remarks) {
+      html += '<div class="abx-collapsible abx-remarks-section">';
+      html += '<div class="abx-collapsible-toggle abx-remarks-label" data-open="true"><span class="abx-caret">&#9660;</span> Remarks</div>';
+      html += '<div class="abx-collapsible-body">' + abxFormatText(ind.remarks) + '</div>';
+      html += '</div>';
+    }
+
+    // De-escalation (collapsible, closed by default)
+    if (ind.deescalation) {
+      html += '<div class="abx-collapsible abx-deesc-section">';
+      html += '<div class="abx-collapsible-toggle abx-deesc-label" data-open="false"><span class="abx-caret">&#9654;</span> De-escalation (cultures negative, patient better)</div>';
+      html += '<div class="abx-collapsible-body abx-collapsed">' + abxFormatText(ind.deescalation) + '</div>';
+      html += '</div>';
+    }
+
+    html += '</div></div>';
+    return html;
+  }
+
+  function abxBindCardEvents() {
+    // Copy buttons
+    abxContent.querySelectorAll(".abx-copy-btn").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var text = btn.dataset.text;
+        abxCopyText(text);
+        btn.classList.add("abx-copied");
+        btn.innerHTML = '<span class="material-icons">check</span>';
+        setTimeout(function () {
+          btn.classList.remove("abx-copied");
+          btn.innerHTML = '<span class="material-icons">content_copy</span>';
+        }, 1200);
+      });
+    });
+
+    // Collapsible toggles
+    abxContent.querySelectorAll(".abx-collapsible-toggle").forEach(function (toggle) {
+      toggle.addEventListener("click", function () {
+        var body = toggle.nextElementSibling;
+        var caret = toggle.querySelector(".abx-caret");
+        var isOpen = toggle.dataset.open === "true";
+        if (isOpen) {
+          body.classList.add("abx-collapsed");
+          toggle.dataset.open = "false";
+          caret.innerHTML = "&#9654;";
+        } else {
+          body.classList.remove("abx-collapsed");
+          toggle.dataset.open = "true";
+          caret.innerHTML = "&#9660;";
+        }
+      });
+    });
+  }
+
+  function abxShowView(view) {
+    abxCurrentView = view;
+    abxRenderView();
+  }
+
+  function abxRenderView() {
+    var view = abxCurrentView;
+    if (view.type === "cards") {
+      var html = "";
+      view.inds.forEach(function (ind) {
+        html += abxRenderCard(ind, view.sys);
+      });
+      abxContent.innerHTML = html;
+      abxBindCardEvents();
+      return;
+    }
+    if (view.type === "system") {
+      var sysObj = view.sys;
+      var filtered = abxFilterIndications(sysObj.indications);
+      var html = '<div class="abx-system-header">' + abxEscape(sysObj.system) + ' Infections';
+      html += '<span class="abx-updated">Last updated: ' + abxEscape(sysObj.lastUpdated) + '</span></div>';
+      if (filtered.length === 0) {
+        html += '<div class="abx-empty">No outpatient indications in this system.</div>';
+      } else {
+        filtered.forEach(function (ind) {
+          html += abxRenderCard(ind, sysObj);
+        });
+      }
+      html += '<div class="abx-footer">Dosing regimens are for patients with normal renal function. Please refer to the Renal Dose Adjustment Guidelines if your patient is renally-impaired.</div>';
+      abxContent.innerHTML = html;
+      abxBindCardEvents();
+      return;
+    }
+    abxContent.innerHTML = '<div class="abx-empty">Select a system or search for an indication to view antimicrobial guidelines.</div>';
+  }
+
+  // Search
+  abxSearch.addEventListener("input", function () {
+    var q = abxSearch.value.toLowerCase();
+    abxSearchIdx = -1;
+    if (q.length < 2) {
+      abxSearchResults.style.display = "none";
+      return;
+    }
+    var matches = [];
+    abxData.forEach(function (sys) {
+      var inds = abxFilterIndications(sys.indications);
+      inds.forEach(function (ind) {
+        if (ind.name.toLowerCase().includes(q) || ind.firstLine.toLowerCase().includes(q) || ind.alternative.toLowerCase().includes(q)) {
+          matches.push({ ind: ind, sys: sys });
+        }
+      });
+    });
+    if (matches.length > 0) {
+      abxSearchResults.innerHTML = matches.map(function (m, i) {
+        var gpMark = abxIsGpCommon(m.ind) ? '<span class="abx-gp-dot"></span>' : '';
+        return '<div data-system="' + abxEscape(m.sys.system) + '" data-name="' + abxEscape(m.ind.name) + '" data-idx="' + i + '">' + gpMark + '<strong>' + abxEscape(m.ind.name) + '</strong> <span class="abx-search-system">' + abxEscape(m.sys.system) + '</span></div>';
+      }).join("");
+      abxSearchResults.style.display = "block";
+    } else {
+      abxSearchResults.innerHTML = '<div class="abx-no-result">No indications found</div>';
+      abxSearchResults.style.display = "block";
+    }
+  });
+
+  // Keyboard navigation for search
+  abxSearch.addEventListener("keydown", function (e) {
+    var items = abxSearchResults.querySelectorAll("div[data-name]");
+    if (!items.length) return;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      abxSearchIdx = Math.min(abxSearchIdx + 1, items.length - 1);
+      abxHighlightSearchResult(items);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      abxSearchIdx = Math.max(abxSearchIdx - 1, 0);
+      abxHighlightSearchResult(items);
+    } else if (e.key === "Enter" && abxSearchIdx >= 0 && abxSearchIdx < items.length) {
+      e.preventDefault();
+      items[abxSearchIdx].click();
+    }
+  });
+
+  function abxHighlightSearchResult(items) {
+    items.forEach(function (el, i) {
+      if (i === abxSearchIdx) {
+        el.classList.add("highlighted");
+        el.scrollIntoView({ block: "nearest" });
+      } else {
+        el.classList.remove("highlighted");
+      }
+    });
+  }
+
+  abxSearchResults.addEventListener("click", function (e) {
+    var target = e.target.closest("div[data-name]");
+    if (!target) return;
+    var sysName = target.dataset.system;
+    var indName = target.dataset.name;
+    var sys = abxData.find(function (s) { return s.system === sysName; });
+    if (sys) {
+      var ind = sys.indications.find(function (i) { return i.name === indName; });
+      if (ind) {
+        abxActiveSystem = sysName;
+        abxRenderSystemList();
+        abxShowView({ type: "cards", inds: [ind], sys: sys });
+        abxSearchResults.style.display = "none";
+        abxSearch.value = "";
+      }
+    }
+  });
+
+  // Toggle handlers — re-render current view
+  abxPcnToggle.addEventListener("change", function () {
+    abxRenderView();
+  });
+
+  abxOpToggle.addEventListener("change", function () {
+    abxRenderSystemList();
+    // If current view is a system, re-render with filter
+    if (abxCurrentView.type === "system") {
+      abxRenderView();
+    } else if (abxCurrentView.type === "empty") {
+      abxRenderView();
+    }
+  });
+
+  // Initial state
+  abxRenderSystemList();
+  abxShowView({ type: "empty" });
 });

@@ -559,3 +559,473 @@ textarea::placeholder {
 .paeds-cell-na {
   color: #cbd5e1 !important;
 }
+
+/* ── Antimicrobial Guidelines Tab ────────────────── */
+.abx-sidebar {
+  position: sticky;
+  top: 56px;
+  max-height: calc(100vh - 72px);
+  overflow-y: auto;
+}
+
+/* System list */
+.abx-system-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 2px;
+  transition: background-color 0.1s;
+  font-size: 12px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.abx-system-item:hover {
+  background-color: #f1f5f9;
+}
+
+.abx-system-item.abx-system-active {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.abx-system-name {
+  flex: 1;
+}
+
+.abx-system-count {
+  font-size: 10px;
+  font-weight: 600;
+  color: #94a3b8;
+  background: #f1f5f9;
+  padding: 1px 7px;
+  border-radius: 10px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.abx-system-active .abx-system-count {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+/* Indication sub-list */
+.abx-indication-list {
+  padding: 2px 0 6px 12px;
+  border-left: 2px solid #dbeafe;
+  margin-left: 12px;
+  margin-bottom: 4px;
+}
+
+.abx-indication-item {
+  padding: 5px 10px;
+  font-size: 11px;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.1s, color 0.1s;
+  line-height: 1.4;
+}
+
+.abx-indication-item:hover {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+/* Search results */
+#abxSearchResults {
+  display: none;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#abxSearchResults div {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.1s;
+}
+
+#abxSearchResults div:last-child {
+  border-bottom: none;
+}
+
+#abxSearchResults div:hover {
+  background-color: #eff6ff;
+}
+
+.abx-search-system {
+  color: #94a3b8;
+  font-weight: 400;
+  margin-left: 6px;
+  font-size: 11px;
+}
+
+.abx-no-result {
+  color: #94a3b8 !important;
+  cursor: default !important;
+  font-style: italic;
+}
+
+/* Content area */
+.abx-empty {
+  text-align: center;
+  color: #94a3b8;
+  padding: 80px 20px;
+  font-size: 14px;
+}
+
+.abx-system-header {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  padding: 12px 0 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.abx-updated {
+  font-size: 11px;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+/* Treatment card */
+.abx-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.abx-card-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.abx-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.abx-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.abx-card-system {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  background: #e2e8f0;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.abx-card-duration {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #7c3aed;
+  background: #f5f3ff;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+.abx-card-body {
+  padding: 16px 20px;
+}
+
+/* Therapy sections */
+.abx-therapy-section {
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+}
+
+.abx-therapy-section.abx-alt {
+  background: #fefce8;
+  border-color: #fde68a;
+}
+
+.abx-therapy-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #16a34a;
+  margin-bottom: 6px;
+}
+
+.abx-alt .abx-therapy-label {
+  color: #ca8a04;
+}
+
+.abx-therapy-text {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #1e293b;
+}
+
+/* Remarks */
+.abx-remarks-section {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+}
+
+.abx-remarks-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #2563eb;
+  margin-bottom: 6px;
+}
+
+.abx-remarks-text {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* De-escalation */
+.abx-deesc-section {
+  padding: 10px 14px;
+  background: #faf5ff;
+  border: 1px solid #e9d5ff;
+  border-radius: 8px;
+}
+
+.abx-deesc-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #7c3aed;
+  margin-bottom: 6px;
+}
+
+.abx-deesc-text {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* Footer */
+.abx-footer {
+  font-size: 11px;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 16px 0;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 8px;
+}
+
+/* ── Toolbar (toggles) ──────────────────────────── */
+.abx-toolbar {
+  display: flex;
+  gap: 16px;
+  padding: 10px 0 14px;
+  align-items: center;
+}
+
+.abx-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  user-select: none;
+}
+
+.abx-toggle input {
+  display: none;
+}
+
+.abx-toggle-slider {
+  position: relative;
+  width: 34px;
+  height: 18px;
+  background: #cbd5e1;
+  border-radius: 9px;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.abx-toggle-slider::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+.abx-toggle input:checked + .abx-toggle-slider {
+  background: #2563eb;
+}
+
+.abx-toggle input:checked + .abx-toggle-slider::after {
+  transform: translateX(16px);
+}
+
+.abx-toggle input:checked ~ .abx-toggle-text {
+  color: #2563eb;
+}
+
+/* ── Copy buttons in therapy sections ────────────── */
+.abx-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #94a3b8;
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  transition: all 0.15s;
+}
+
+.abx-copy-btn .material-icons {
+  font-size: 13px;
+}
+
+.abx-copy-btn:hover {
+  background: rgba(0,0,0,0.05);
+  color: #475569;
+  border-color: #e2e8f0;
+}
+
+.abx-copy-btn.abx-copied {
+  color: #16a34a;
+}
+
+/* ── Penicillin allergy toggle states ────────────── */
+.abx-therapy-section.abx-dimmed {
+  opacity: 0.45;
+  border-style: dashed;
+}
+
+.abx-therapy-section.abx-highlighted {
+  background: #f0fdf4;
+  border-color: #86efac;
+  box-shadow: 0 0 0 2px rgba(34,197,94,0.15);
+}
+
+.abx-therapy-section.abx-highlighted .abx-therapy-label {
+  color: #16a34a;
+}
+
+/* ── Collapsible sections ────────────────────────── */
+.abx-collapsible-toggle {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.abx-collapsible-toggle:hover {
+  opacity: 0.8;
+}
+
+.abx-caret {
+  font-size: 9px;
+  line-height: 1;
+  display: inline-block;
+  width: 12px;
+  flex-shrink: 0;
+}
+
+.abx-collapsible-body {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.abx-collapsible-body.abx-collapsed {
+  display: none;
+}
+
+/* ── GP-common badge & dot ───────────────────────── */
+.abx-gp-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background: #2563eb;
+  padding: 1px 5px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.abx-gp-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #2563eb;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.abx-indication-item.abx-gp-common {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.abx-indication-item.abx-gp-common::before {
+  content: "\25CF";
+  color: #2563eb;
+  font-size: 6px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* ── Search result highlighting ──────────────────── */
+#abxSearchResults div.highlighted {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
