@@ -707,4 +707,209 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initial state
   abxRenderSystemList();
   abxShowView({ type: "empty" });
+
+  // --- STI Guidelines tab ---
+  var stiConditions = window.STI_CONDITIONS || [];
+  var stiSearch = document.getElementById("stiSearch");
+  var stiSearchResults = document.getElementById("stiSearchResults");
+  var stiCategoryList = document.getElementById("stiCategoryList");
+  var stiContent = document.getElementById("stiContent");
+  var stiActiveCategory = null;
+  var stiCurrentCondition = null;
+
+  function stiEscape(str) {
+    var div = document.createElement("div");
+    div.textContent = str || "";
+    return div.innerHTML;
+  }
+
+  function stiFormatText(str) {
+    if (!str) return "";
+    return stiEscape(str).replace(/\n/g, "<br>");
+  }
+
+  function stiGetCategories() {
+    var cats = [];
+    stiConditions.forEach(function (c) {
+      if (cats.indexOf(c.category) === -1) cats.push(c.category);
+    });
+    return cats;
+  }
+
+  function stiRenderCategoryList() {
+    var cats = stiGetCategories();
+    var html = "";
+    cats.forEach(function (cat) {
+      var conditions = stiConditions.filter(function (c) { return c.category === cat; });
+      var isActive = stiActiveCategory === cat;
+      html += '<div class="sti-cat-item' + (isActive ? " sti-cat-active" : "") + '" data-category="' + stiEscape(cat) + '">';
+      html += '<div class="sti-cat-name">' + stiEscape(cat) + '</div>';
+      html += '<div class="sti-cat-count">' + conditions.length + '</div>';
+      html += '</div>';
+      if (isActive) {
+        html += '<div class="sti-condition-list">';
+        conditions.forEach(function (cond) {
+          var isCurrent = stiCurrentCondition && stiCurrentCondition.name === cond.name;
+          html += '<div class="sti-condition-item' + (isCurrent ? " sti-condition-active" : "") + '" data-name="' + stiEscape(cond.name) + '">';
+          if (cond.notifyMOH) html += '<span class="sti-moh-dot"></span>';
+          html += stiEscape(cond.name);
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+    });
+    stiCategoryList.innerHTML = html;
+
+    stiCategoryList.querySelectorAll(".sti-cat-item").forEach(function (el) {
+      el.addEventListener("click", function () {
+        var cat = el.dataset.category;
+        stiActiveCategory = stiActiveCategory === cat ? null : cat;
+        stiRenderCategoryList();
+      });
+    });
+
+    stiCategoryList.querySelectorAll(".sti-condition-item").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var cond = stiConditions.find(function (c) { return c.name === el.dataset.name; });
+        if (cond) {
+          stiCurrentCondition = cond;
+          stiRenderCategoryList();
+          stiRenderDetail(cond);
+        }
+      });
+    });
+  }
+
+  function stiRenderDetail(cond) {
+    var html = '<div class="sti-detail-card">';
+
+    // Header
+    html += '<div class="sti-detail-header">';
+    html += '<div class="sti-detail-title">' + stiEscape(cond.name);
+    if (cond.notifyMOH) html += ' <span class="sti-moh-badge">MOH Notifiable</span>';
+    html += '</div>';
+    html += '<span class="sti-detail-category">' + stiEscape(cond.category) + '</span>';
+    html += '</div>';
+
+    html += '<div class="sti-detail-body">';
+
+    // Symptoms
+    if (cond.symptoms && cond.symptoms.length > 0) {
+      html += '<div class="sti-section sti-symptoms-section">';
+      html += '<div class="sti-section-label">SALIENT SYMPTOMS</div>';
+      html += '<ul class="sti-bullet-list">';
+      cond.symptoms.forEach(function (s) { html += '<li>' + stiEscape(s) + '</li>'; });
+      html += '</ul></div>';
+    }
+
+    // Diagnostic workup
+    if (cond.diagnosticWorkup && cond.diagnosticWorkup.length > 0) {
+      html += '<div class="sti-section sti-workup-section">';
+      html += '<div class="sti-section-label">DIAGNOSTIC WORKUP</div>';
+      html += '<ul class="sti-bullet-list">';
+      cond.diagnosticWorkup.forEach(function (d) { html += '<li>' + stiEscape(d) + '</li>'; });
+      html += '</ul></div>';
+    }
+
+    // First-line treatment
+    if (cond.firstLine) {
+      html += '<div class="sti-section sti-firstline-section">';
+      html += '<div class="sti-section-label">FIRST-LINE TREATMENT';
+      html += '<button class="sti-copy-btn" data-text="' + stiEscape(cond.firstLine) + '" title="Copy"><span class="material-icons">content_copy</span></button>';
+      html += '</div>';
+      html += '<div class="sti-section-text">' + stiFormatText(cond.firstLine) + '</div>';
+      html += '</div>';
+    }
+
+    // Second-line / alternative
+    if (cond.secondLine) {
+      html += '<div class="sti-section sti-secondline-section">';
+      html += '<div class="sti-section-label">SECOND-LINE / ALTERNATIVE';
+      html += '<button class="sti-copy-btn" data-text="' + stiEscape(cond.secondLine) + '" title="Copy"><span class="material-icons">content_copy</span></button>';
+      html += '</div>';
+      html += '<div class="sti-section-text">' + stiFormatText(cond.secondLine) + '</div>';
+      html += '</div>';
+    }
+
+    // Pregnancy considerations
+    if (cond.pregnancy) {
+      html += '<div class="sti-section sti-pregnancy-section">';
+      html += '<div class="sti-section-label">PREGNANCY CONSIDERATIONS</div>';
+      html += '<div class="sti-section-text">' + stiFormatText(cond.pregnancy) + '</div>';
+      html += '</div>';
+    }
+
+    // Notes
+    if (cond.notes) {
+      html += '<div class="sti-section sti-notes-section">';
+      html += '<div class="sti-section-label">NOTES</div>';
+      html += '<div class="sti-section-text">' + stiFormatText(cond.notes) + '</div>';
+      html += '</div>';
+    }
+
+    html += '</div></div>';
+    stiContent.innerHTML = html;
+
+    // Bind copy buttons
+    stiContent.querySelectorAll(".sti-copy-btn").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        copyToClipboard(btn.dataset.text);
+        btn.classList.add("sti-copied");
+        btn.innerHTML = '<span class="material-icons">check</span>';
+        setTimeout(function () {
+          btn.classList.remove("sti-copied");
+          btn.innerHTML = '<span class="material-icons">content_copy</span>';
+        }, 1200);
+      });
+    });
+  }
+
+  // Search
+  stiSearch.addEventListener("input", function () {
+    var q = stiSearch.value.toLowerCase();
+    if (q.length < 2) {
+      stiSearchResults.style.display = "none";
+      return;
+    }
+    var matches = stiConditions.filter(function (c) {
+      return c.name.toLowerCase().includes(q) ||
+        c.category.toLowerCase().includes(q) ||
+        (c.symptoms && c.symptoms.some(function (s) { return s.toLowerCase().includes(q); })) ||
+        (c.firstLine && c.firstLine.toLowerCase().includes(q)) ||
+        (c.secondLine && c.secondLine.toLowerCase().includes(q));
+    });
+    if (matches.length > 0) {
+      stiSearchResults.innerHTML = matches.map(function (c) {
+        return '<div data-name="' + stiEscape(c.name) + '">' +
+          (c.notifyMOH ? '<span class="sti-moh-dot"></span>' : '') +
+          '<strong>' + stiEscape(c.name) + '</strong>' +
+          '<span class="sti-search-cat">' + stiEscape(c.category) + '</span>' +
+          '</div>';
+      }).join("");
+      stiSearchResults.style.display = "block";
+    } else {
+      stiSearchResults.innerHTML = '<div class="sti-no-result">No conditions found</div>';
+      stiSearchResults.style.display = "block";
+    }
+  });
+
+  stiSearchResults.addEventListener("click", function (e) {
+    var target = e.target.closest("div[data-name]");
+    if (!target) return;
+    var cond = stiConditions.find(function (c) { return c.name === target.dataset.name; });
+    if (cond) {
+      stiCurrentCondition = cond;
+      stiActiveCategory = cond.category;
+      stiRenderCategoryList();
+      stiRenderDetail(cond);
+      stiSearchResults.style.display = "none";
+      stiSearch.value = "";
+    }
+  });
+
+  // Initial render
+  stiRenderCategoryList();
+  stiContent.innerHTML = '<div class="sti-empty">Select a category or search for a condition to view STI guidelines.</div>';
 });

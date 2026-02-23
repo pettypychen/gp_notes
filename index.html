@@ -17,6 +17,7 @@
     <button class="tab-button" data-tab="tab-referrals">Referrals</button>
     <button class="tab-button" data-tab="tab-paeds">Paeds Dosing</button>
     <button class="tab-button" data-tab="tab-abx">Antimicrobial</button>
+    <button class="tab-button" data-tab="tab-sti">STI Guidelines</button>
   </div>
 
   <!-- SOAP Notes tab -->
@@ -173,10 +174,31 @@
     </div>
   </div>
 
+  <!-- STI Guidelines tab -->
+  <div id="tab-sti" class="tab-panel">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-container sti-sidebar">
+            <h2>Search:</h2>
+            <input type="text" id="stiSearch" placeholder="Search conditions..." autocomplete="off">
+            <div id="stiSearchResults"></div>
+            <h2>Categories:</h2>
+            <div id="stiCategoryList"></div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div id="stiContent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="data/conditions.js"></script>
   <script src="data/referrals.js"></script>
   <script src="data/paeds.js"></script>
   <script src="data/antimicrobial.js"></script>
+  <script src="data/sti.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

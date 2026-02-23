@@ -1029,3 +1029,338 @@ textarea::placeholder {
   background-color: #eff6ff;
   color: #2563eb;
 }
+
+/* ══ STI Guidelines Tab ══════════════════════════════ */
+
+/* Sticky sidebar */
+.sti-sidebar {
+  position: sticky;
+  top: 56px;
+  max-height: calc(100vh - 72px);
+  overflow-y: auto;
+}
+
+/* Category list */
+.sti-cat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 2px;
+  transition: background-color 0.1s;
+  font-size: 12px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.sti-cat-item:hover {
+  background-color: #f1f5f9;
+}
+
+.sti-cat-item.sti-cat-active {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.sti-cat-name {
+  flex: 1;
+}
+
+.sti-cat-count {
+  font-size: 10px;
+  font-weight: 600;
+  color: #94a3b8;
+  background: #f1f5f9;
+  padding: 1px 7px;
+  border-radius: 10px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.sti-cat-active .sti-cat-count {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+/* Condition sub-list */
+.sti-condition-list {
+  padding: 2px 0 6px 12px;
+  border-left: 2px solid #dbeafe;
+  margin-left: 12px;
+  margin-bottom: 4px;
+}
+
+.sti-condition-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  font-size: 11px;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.1s, color 0.1s;
+  line-height: 1.4;
+}
+
+.sti-condition-item:hover {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.sti-condition-item.sti-condition-active {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+/* Search results */
+#stiSearchResults {
+  display: none;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#stiSearchResults div {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#stiSearchResults div:last-child {
+  border-bottom: none;
+}
+
+#stiSearchResults div:hover {
+  background-color: #eff6ff;
+}
+
+.sti-search-cat {
+  color: #94a3b8;
+  font-weight: 400;
+  font-size: 11px;
+  margin-left: auto;
+}
+
+.sti-no-result {
+  color: #94a3b8 !important;
+  cursor: default !important;
+  font-style: italic;
+}
+
+/* Empty state */
+.sti-empty {
+  text-align: center;
+  color: #94a3b8;
+  padding: 80px 20px;
+  font-size: 14px;
+}
+
+/* MOH Notifiable badge and dot */
+.sti-moh-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background: #dc2626;
+  padding: 2px 7px;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.sti-moh-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #dc2626;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Detail card */
+.sti-detail-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.sti-detail-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.sti-detail-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.sti-detail-category {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  background: #e2e8f0;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.sti-detail-body {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Section base */
+.sti-section {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.sti-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sti-section-text {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #1e293b;
+}
+
+/* Bullet list */
+.sti-bullet-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #334155;
+}
+
+.sti-bullet-list li {
+  margin-bottom: 3px;
+}
+
+/* Symptoms — slate */
+.sti-symptoms-section {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.sti-symptoms-section .sti-section-label {
+  color: #475569;
+}
+
+/* Diagnostic workup — blue */
+.sti-workup-section {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.sti-workup-section .sti-section-label {
+  color: #2563eb;
+}
+
+/* First-line — green */
+.sti-firstline-section {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.sti-firstline-section .sti-section-label {
+  color: #16a34a;
+}
+
+/* Second-line — amber */
+.sti-secondline-section {
+  background: #fefce8;
+  border-color: #fde68a;
+}
+
+.sti-secondline-section .sti-section-label {
+  color: #ca8a04;
+}
+
+/* Pregnancy — purple */
+.sti-pregnancy-section {
+  background: #faf5ff;
+  border-color: #e9d5ff;
+}
+
+.sti-pregnancy-section .sti-section-label {
+  color: #7c3aed;
+}
+
+/* Notes — slate-blue */
+.sti-notes-section {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+}
+
+.sti-notes-section .sti-section-label {
+  color: #0369a1;
+}
+
+/* Copy buttons within STI sections */
+.sti-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #94a3b8;
+  cursor: pointer;
+  margin-left: 6px;
+  vertical-align: middle;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.sti-copy-btn .material-icons {
+  font-size: 13px;
+}
+
+.sti-copy-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #475569;
+  border-color: #e2e8f0;
+}
+
+.sti-copy-btn.sti-copied {
+  color: #16a34a;
+}
