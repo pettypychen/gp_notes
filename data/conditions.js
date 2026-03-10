@@ -438,7 +438,7 @@ window.CONDITIONS = [
     "Hx": "",
     "OE": "",
     "Ix": "Clinical",
-    "Tx": "Hydrosil\nAntacid 2 tab bd-tds PO\nFamotidine 20mg bd PO [with NSAIDs]\nMist carminative 10mls tds/prn PO [wind]\nMagnesium Trisilicate (MMT) 10mls tds/qds/prn PO\nOmeprazole (Losec)/Pantoprazole 20mg om/bd, 40mg OM IV Omeprazole infusion 8mg/h (80mg in 1 pint N/S @ 50mls/h)\nSomatostatin 0.25mg IV stat then 0.25mg/h infusion (Varices).\nMebeverine 135 mg tds (IBS)\nFluimucil (Acetylcysteine) 60mg BD x 2/7 (b4 CT scan); PO 140 mg/kg; IV 150 mg/kg over 60 minutes"
+    "Tx": "Hydrosil\nAntacid 2 tab bd-tds PO\nAlumag 1-2 tab tds/prn PO [antacid]\nFamotidine 20mg bd PO [with NSAIDs]\nMist carminative 10mls tds/prn PO [wind]\nMagnesium Trisilicate (MMT) 10mls tds/qds/prn PO\nOmeprazole (Losec)/Pantoprazole 20mg om/bd, 40mg OM IV Omeprazole infusion 8mg/h (80mg in 1 pint N/S @ 50mls/h)\nSomatostatin 0.25mg IV stat then 0.25mg/h infusion (Varices).\nMebeverine 135 mg tds (IBS)\nFluimucil (Acetylcysteine) 60mg BD x 2/7 (b4 CT scan); PO 140 mg/kg; IV 150 mg/kg over 60 minutes"
   },
   {
     "Dx": "tx - hypertension emergency/urgency (>230/130)",
@@ -586,6 +586,26 @@ window.CONDITIONS = [
     "OE": "",
     "Ix": "Clinical",
     "Tx": "Hypercholesterolemia: 5mg-10mg PO daily; may titrate every 4 weeks (max 20mg).\nCV Prophylaxis: 20mg daily (40mg reserved for specialist-led high-risk cases).\nTiming: Once daily at any time (consistency preferred); with or without food.\nMissed Dose: Take if remembered same day. If not, skip and resume schedule. No double dosing.\n\nDuration: Long-term/lifelong therapy.\nCessation: No withdrawal symptoms, but discontinuation increases CV risk and cholesterol rebound.\nToxicity: Single extra dose usually non-toxic; monitor for persistent over-ingestion.\n\nCommon SEs: Headache, dizziness, myalgia, nausea, dyspepsia, flatulence, constipation/diarrhea, fatigue, insomnia, thrombocytopenia.\nRare SEs: Hepatitis, pancreatitis, paresthesia, memory impairment, alopecia, rash, decreased libido/ED."
+  },
+  {
+    "Dx": "tx - starting statin for hld",
+    "Hx": "",
+    "OE": "",
+    "Ix": "Clinical",
+    "Table": {
+      "caption": "Approximate % LDL Lowering",
+      "headers": ["Statin", "20-25%", "26-30%", "31-35%", "36-40%", "41-50%", "51-60%"],
+      "rows": [
+        ["Atorvastatin (Lipitor)", "—", "—", "10mg", "20mg", "40mg", "80mg"],
+        ["Rosuvastatin (Crestor)", "—", "—", "—", "5mg", "10mg", "20mg, 40mg"],
+        ["Simvastatin (Zocor)", "—", "5mg, 10mg", "—", "20mg, 40mg", "80mg*", "—"],
+        ["Pitavastatin (Livalo)", "—", "—", "1mg", "2mg", "4mg", "—"],
+        ["Lovastatin (Mevacor)", "10mg", "20mg", "40mg", "80mg", "—", "—"],
+        ["Pravastatin (Pravachol)", "10mg", "—", "20mg, 40mg", "80mg", "—", "—"],
+        ["Fluvastatin (Lescol)", "20mg", "40mg", "80mg", "—", "—", "—"]
+      ]
+    },
+    "Tx": "*Simvastatin 80mg: avoid — high myopathy risk\n\nPreferred (high potency): Atorvastatin & Rosuvastatin\nAtorvastatin 80mg ≈ Rosuvastatin 20mg (~55% LDL ↓)\nFewer drug interactions: Atorvastatin > Simvastatin\n\nTypical start:\n  Moderate risk: Rosuvastatin 5mg ON or Atorvastatin 10mg ON\n  High risk: Rosuvastatin 10-20mg ON or Atorvastatin 20-40mg ON\n\nRecheck lipid panel in 6-8 weeks after initiation"
   },
   {
     "Dx": "tx - starting metformin for dm",

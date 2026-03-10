@@ -2,116 +2,995 @@ window.REFERRALS = [
   {
     "id": "breast-breast_lump",
     "name": "Breast Surgery - Breast Lump",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Breast Surgery / General Surgery\nReason: Breast lump for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ F __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Breast Surgery/General Surgery Team,\n\nThe above patient was seen at Parkway Shenton Clinic with a palpable breast lump.\n\nHx:\nDuration: __\nLocation: L/R breast, __ o'clock\nPain: __\nSkin changes: __\nNipple discharge: __\nFHx breast/ovarian cancer: __\nPrevious mammogram/ultrasound: __\nLMP: __\n\nO/E:\nLump: __ cm, firm/soft, mobile/fixed, at __ o'clock\nSkin tethering: __\nNipple retraction: __\nAxillary lymphadenopathy: __\n\nKindly arrange imaging and further management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Breast / General Surgery
+Reason: Breast lump
+
+Name: __
+NRIC: __
+Age/Sex: __ F
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with a palpable breast lump.
+
+Hx:
+Duration: __ | Location: L/R breast, __ o'clock
+Pain: __ | Skin changes: __ | Nipple discharge: __
+FHx breast/ovarian Ca: __ | Previous imaging: __ | LMP: __
+
+O/E:
+Lump: __ cm, firm/soft, mobile/fixed, __ o'clock
+Skin tethering: __ | Nipple retraction: __ | Axillary LN: __
+
+Please arrange imaging and further management.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "cardio-abnormal_ecg",
     "name": "Cardiology - Abnormal ECG",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Cardiology\nReason: Abnormal ECG for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Cardiology Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have an abnormal ECG.\n\nECG findings: __ (Date: __)\nSymptoms: Nil chest pain, nil palpitations, nil dyspnoea, nil syncope\nCardiac risk factors: DM/HPT/HLD/Smoking/FHx IHD\nPrevious cardiac workup: __\n\nO/E:\nVitals: BP __ mmHg, HR __ bpm, SpO2 __%\nHS: Dual, no murmur\nChest: Clear\n\nKindly assess and advise on further management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Cardiology
+Reason: Abnormal ECG
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with an abnormal ECG.
+
+ECG: __ (Date: __)
+Symptoms: Nil chest pain / palpitations / dyspnoea / syncope
+Risk factors: DM / HPT / HLD / Smoking / FHx IHD
+Previous cardiac workup: __
+
+O/E:
+BP __ mmHg | HR __ bpm | SpO2 __%
+HS: Dual, no murmur | Chest: Clear
+
+Please assess and advise.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "cardio-abnormal_tmx",
     "name": "Cardiology - Abnormal TMX",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Cardiology\nReason: Abnormal treadmill test for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Cardiology Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have an abnormal treadmill test.\n\nTMX findings: __ (Date: __)\nDuration: __ minutes, __ METs\nSymptoms during test: __\nSymptoms at rest: Nil chest pain, nil dyspnoea, nil palpitations\nCardiac risk factors: DM/HPT/HLD/Smoking/FHx IHD\nPrevious cardiac workup: __\n\nO/E:\nVitals: BP __ mmHg, HR __ bpm, SpO2 __%\nHS: Dual, no murmur\nChest: Clear\n\nKindly arrange further evaluation (coronary angiogram/CT coronary angiogram) and management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Cardiology
+Reason: Abnormal treadmill test
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with an abnormal treadmill test.
+
+TMX: __ (Date: __) | Duration: __ min, __ METs
+Symptoms during test: __ | At rest: Nil chest pain / dyspnoea / palpitations
+Risk factors: DM / HPT / HLD / Smoking / FHx IHD
+Previous cardiac workup: __
+
+O/E:
+BP __ mmHg | HR __ bpm | SpO2 __%
+HS: Dual, no murmur | Chest: Clear
+
+Please arrange further evaluation (coronary angiogram / CTCA) and management.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "cardio-palpitations",
     "name": "Cardiology - Palpitations",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Cardiology\nReason: Palpitations for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Cardiology Team,\n\nThe above patient was seen at Parkway Shenton Clinic with palpitations.\n\nHx:\nDuration: __\nFrequency: __\nOnset: Sudden/Gradual\nRegular/Irregular: __\nAssociated symptoms: Nil chest pain, nil dyspnoea, nil syncope, nil presyncope\nTriggers: Caffeine/Exercise/Stress/NIL\nCardiac risk factors: DM/HPT/HLD/Smoking/FHx IHD/FHx sudden cardiac death\n\nO/E:\nVitals: BP __ mmHg, HR __ bpm (regular/irregular), SpO2 __%\nHS: Dual, no murmur\nChest: Clear\nThyroid: __\n\nECG: __ (Date: __)\n\nKindly assess and arrange further workup (Holter/echocardiogram) as appropriate.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Cardiology
+Reason: Palpitations
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with palpitations.
+
+Hx:
+Duration: __ | Frequency: __ | Onset: Sudden / Gradual
+Regularity: __ | Triggers: Caffeine / Exercise / Stress / Nil
+Associated: Nil chest pain / dyspnoea / syncope / presyncope
+Risk factors: DM / HPT / HLD / Smoking / FHx IHD / FHx sudden cardiac death
+
+O/E:
+BP __ mmHg | HR __ bpm (regular/irregular) | SpO2 __%
+HS: Dual, no murmur | Chest: Clear | Thyroid: __
+ECG: __ (Date: __)
+
+Please assess and arrange further workup (Holter / echo) as appropriate.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
+  },
+  {
+    "id": "cardio-chestpain",
+    "name": "Cardiology - Chest Pain",
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Cardiology
+Reason: Chest pain
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with chest pain.
+
+Hx:
+Duration: __ | Onset: Sudden / Gradual | Character: __
+Radiation: __ | Exertional: Yes / No
+Associated: Nil dyspnoea / palpitations / syncope / diaphoresis
+Triggers / relieving factors: __
+Risk factors: DM / HPT / HLD / Smoking / FHx IHD
+
+O/E:
+BP __ mmHg | HR __ bpm | SpO2 __%
+HS: Dual, no murmur | Chest: Clear
+ECG: __ (Date: __)
+
+Please assess and arrange further workup as appropriate.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "gs-fobt",
     "name": "Colorectal Surgery - FOBT Abnormal",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Colorectal Surgery / General Surgery\nReason: Abnormal FOBT - referral for colonoscopy\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Colorectal Surgery/General Surgery Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have an abnormal FOBT result.\n\nFOBT result: __ (Date: __)\nSymptoms: Nil PR bleeding, nil change in bowel habits, nil abdominal pain, nil weight loss\nPrevious colonoscopy: __\nFHx colorectal cancer: __\n\nO/E:\nAbdomen: Soft nontender, nil palpable mass\nDRE: __\n\nKindly arrange for colonoscopy and further management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Colorectal / General Surgery
+Reason: Abnormal FOBT — for colonoscopy
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please arrange colonoscopy for this patient with an abnormal FOBT.
+
+FOBT: __ (Date: __)
+Symptoms: Nil PR bleeding / change in bowel habits / abdominal pain / weight loss
+Previous colonoscopy: __ | FHx colorectal Ca: __
+
+O/E:
+Abdomen: Soft, nontender, nil mass | DRE: __
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "ent-ebv_igg",
     "name": "ENT - EBV IgG Positive",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: ENT / Haematology\nReason: EBV IgG positive for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear ENT/Haematology Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have positive EBV serology on screening.\n\nEBV VCA IgG: Positive (Date: __)\nEBV VCA IgM: __\nEBV EA IgG: __\nEBV EBNA IgG: __\nSymptoms: Nil sore throat, nil neck lumps, nil epistaxis, nil nasal obstruction, nil unilateral hearing loss, nil weight loss, nil night sweats, nil fever\nFHx NPC/lymphoma: __\nEthnicity: __\n\nO/E:\nCervical lymphadenopathy: __\nOropharynx: __\nNasal examination: __\n\nKindly assess and advise on need for nasopharyngoscopy/imaging to exclude NPC or other EBV-related pathology.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: ENT / Haematology
+Reason: EBV IgG positive
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with positive EBV serology on screening.
+
+EBV VCA IgG: Positive (Date: __)
+EBV VCA IgM: __ | EBV EA IgG: __ | EBV EBNA IgG: __
+Ethnicity: __ | FHx NPC / lymphoma: __
+Symptoms: Nil sore throat / neck lump / epistaxis / nasal obstruction / unilateral hearing loss / weight loss / night sweats / fever
+
+O/E:
+Cervical LN: __ | Oropharynx: __ | Nasal exam: __
+
+Please advise on need for nasopharyngoscopy / imaging to exclude NPC.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "gs-elevated_cea",
     "name": "General Surgery - Elevated CEA",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Gastroenterology / General Surgery\nReason: Elevated CEA for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Gastroenterology/General Surgery Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have an elevated CEA on routine bloods.\n\nCEA: __ ng/mL (Date: __)\nSmoking: __\nSymptoms: Nil weight loss, nil change in bowel habits, nil abdominal pain, nil PR bleeding\nPrevious colonoscopy: __\nFHx GI malignancy: __\n\nO/E:\nAbdomen: Soft nontender, nil palpable mass\nDRE: __\n\nKindly arrange further workup (colonoscopy, CT abdomen/pelvis).\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Gastroenterology / General Surgery
+Reason: Elevated CEA
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with an elevated CEA on screening.
+
+CEA: __ ng/mL (Date: __) | Smoking: __
+Symptoms: Nil weight loss / change in bowel habits / abdominal pain / PR bleeding
+Previous colonoscopy: __ | FHx GI malignancy: __
+
+O/E:
+Abdomen: Soft, nontender, nil mass | DRE: __
+
+Please arrange further workup (colonoscopy, CT abdomen/pelvis).
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "generic",
     "name": "Generic Referral",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: __\nReason: __\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Colleague,\n\nThe above patient was seen at Parkway Shenton Clinic with the following complaint:\n__\n\nO/E:\n__\n\nImpression: __\n\nKindly assist in further evaluation and management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: __
+Reason: __
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient:
+__
+
+O/E:
+__
+
+Impression: __
+
+Please assist with further evaluation and management.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "og-abnormal_pap",
     "name": "O&G - Abnormal PAP Smear",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Obstetrics & Gynaecology\nReason: Abnormal PAP smear for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ F __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear O&G Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have an abnormal PAP smear.\n\nPAP result: __ (Date: __)\nHPV co-testing: __\nHPV vaccination: __\nPrevious PAP history: __\nLMP: __\nParity: G__P__\nSymptoms: Nil abnormal vaginal bleeding, nil post-coital bleeding, nil vaginal discharge\nSmoking: __\n\nO/E:\nSpeculum: Cervix __\nBimanual: __\n\nKindly arrange colposcopy and further management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Obstetrics & Gynaecology
+Reason: Abnormal PAP smear
+
+Name: __
+NRIC: __
+Age/Sex: __ F
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please arrange colposcopy for this patient with an abnormal PAP smear.
+
+PAP: __ (Date: __) | HPV co-test: __ | HPV vaccination: __
+Previous PAP: __ | LMP: __ | Parity: G__P__ | Smoking: __
+Symptoms: Nil abnormal vaginal bleeding / post-coital bleeding / vaginal discharge
+
+O/E:
+Speculum: __ | Bimanual: __
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "ortho-back_pain",
     "name": "Orthopaedic Surgery - Back Pain",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Orthopaedic Surgery (Spine)\nReason: Back pain for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Orthopaedic Surgery Team,\n\nThe above patient was seen at Parkway Shenton Clinic with back pain.\n\nHx:\nDuration: __\nLocation: Cervical/Thoracic/Lumbar/Sacral\nOnset: Traumatic/Atraumatic\nRadiation: Nil/L/R leg, dermatomal pattern __\nNeurological symptoms: Nil numbness, nil weakness, nil bowel/bladder dysfunction\nRed flags: Nil trauma, nil fever, nil weight loss, nil night pain, nil Hx malignancy\nAggravating factors: __\nRelieving factors: __\nPrevious imaging: __\nPhysiotherapy: __\n\nO/E:\nInspection: __\nTenderness: __\nRange of motion: __\nStraight leg raise: __\nNeuro: Power __, sensation __, reflexes __\nSpecial tests: __\n\nKindly assess and arrange further imaging/management as appropriate.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Orthopaedic Surgery (Spine)
+Reason: Back pain
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with back pain.
+
+Hx:
+Duration: __ | Region: Cervical / Thoracic / Lumbar / Sacral
+Onset: Traumatic / Atraumatic | Radiation: Nil / L / R leg, dermatomal pattern __
+Neuro symptoms: Nil numbness / weakness / bowel-bladder dysfunction
+Red flags: Nil trauma / fever / weight loss / night pain / malignancy Hx
+Aggravating: __ | Relieving: __ | Previous imaging: __ | Physio: __
+
+O/E:
+Inspection: __ | Tenderness: __ | ROM: __
+SLR: __ | Power: __ | Sensation: __ | Reflexes: __
+
+Please arrange further imaging / management as appropriate.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "ortho-fracture",
     "name": "Orthopaedic Surgery - Fracture",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Orthopaedic Surgery\nReason: Fracture management\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Orthopaedic Surgery Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have a fracture on imaging.\n\nHx:\nMechanism of injury: __\nDate/time of injury: __\nLocation: __\nAble to weight bear: Yes/No\nNeurovascular symptoms: Nil numbness, nil weakness, nil colour change\n\nX-ray findings: __ (Date: __)\nFracture site: __\nDisplacement: __\nAngulation: __\nIntra-articular: Yes/No\n\nO/E:\nSwelling: __\nDeformity: __\nTenderness: __\nRange of motion: __\nNeurovascular: Distal pulses __, sensation __, motor function __\nSkin integrity: Intact/Open\n\nManagement so far:\nSplint/Backslab applied: __\nAnalgesia: __\n\nKindly assess and advise on definitive management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Orthopaedic Surgery
+Reason: Fracture management
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with a fracture on imaging.
+
+Hx:
+Mechanism: __ | Date/time: __ | Site: __
+Weight-bearing: Yes / No | Neurovascular: Nil numbness / weakness / colour change
+
+Imaging: __ (Date: __)
+Fracture: __ | Displacement: __ | Angulation: __ | Intra-articular: Yes / No
+
+O/E:
+Swelling: __ | Deformity: __ | Tenderness: __ | ROM: __
+Neurovascular: Pulses __, sensation __, motor __ | Skin: Intact / Open
+
+Management: Splint/backslab __ | Analgesia: __
+
+Please advise on definitive management.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "ortho-knee_pain",
     "name": "Orthopaedic Surgery - Knee Pain",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Orthopaedic Surgery\nReason: Knee pain for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Orthopaedic Surgery Team,\n\nThe above patient was seen at Parkway Shenton Clinic with knee pain.\n\nHx:\nDuration: __\nLaterality: L/R/Bilateral\nOnset: Traumatic/Atraumatic\nLocation of pain: Medial/Lateral/Anterior/Posterior/Diffuse\nMechanical symptoms: Nil locking, nil giving way, nil clicking\nSwelling: __\nAble to weight bear: Yes/No\nAggravating factors: Walking/Stairs/Squatting\nRelieving factors: __\nPrevious knee injuries: __\nPrevious imaging: __\nPhysiotherapy: __\n\nO/E:\nInspection: Swelling __, deformity __, muscle wasting __\nTenderness: Medial/Lateral joint line, patella, tibial tuberosity\nRange of motion: Flexion __°, extension __°\nEffusion: __\nLigaments: Anterior/Posterior drawer __, Lachman __, valgus/varus stress __\nMenisci: McMurray test __\nPatella: Apprehension test __\n\nKindly assess and arrange further imaging/management as appropriate.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Orthopaedic Surgery
+Reason: Knee pain
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with knee pain.
+
+Hx:
+Duration: __ | Side: L / R / Bilateral | Onset: Traumatic / Atraumatic
+Location: Medial / Lateral / Anterior / Posterior / Diffuse
+Mechanical: Nil locking / giving way / clicking | Swelling: __ | WB: Yes / No
+Aggravating: Walking / Stairs / Squatting | Relieving: __
+Previous injury / imaging / physio: __
+
+O/E:
+Swelling: __ | Deformity: __ | Wasting: __
+Tenderness: Medial / Lateral joint line / Patella / Tibial tuberosity
+ROM: Flexion __° / Extension __° | Effusion: __
+Ligaments: Ant/Post drawer __ | Lachman __ | Valgus/varus __
+Menisci: McMurray __ | Patella: Apprehension __
+
+Please arrange further imaging / management.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "physio",
     "name": "Physiotherapy",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Physiotherapy\nReason: __\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Physiotherapy Team,\n\nThe above patient was seen at Parkway Shenton Clinic with:\n__\n\nO/E:\n__\n\nImpression: __\n\nKindly assess and initiate appropriate physiotherapy.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Physiotherapy
+Reason: __
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please assess and initiate physiotherapy for this patient.
+
+Presentation: __
+
+O/E:
+__
+
+Impression: __
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "endo-abnormal_thyroid",
     "name": "Endocrinology - Abnormal Thyroid Function",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Endocrinology\nReason: Abnormal thyroid function tests for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Endocrinology Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have abnormal thyroid function on screening bloods.\n\nTSH: __ mIU/L (Date: __)\nFree T4: __ pmol/L\nFree T3: __ pmol/L\nAnti-TPO antibodies: __\nSymptoms: Nil weight change, nil heat/cold intolerance, nil palpitations, nil tremor, nil fatigue, nil constipation/diarrhoea, nil hair loss, nil neck swelling\nFHx thyroid disease: __\nPrevious thyroid workup: __\n\nO/E:\nVitals: BP __ mmHg, HR __ bpm\nThyroid: __ (size, nodularity, tenderness)\nTremor: __\nEyes: Nil proptosis, nil lid lag\n\nKindly assess and advise on further management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Endocrinology
+Reason: Abnormal thyroid function
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with abnormal thyroid function on screening.
+
+TSH: __ mIU/L | fT4: __ pmol/L | fT3: __ pmol/L (Date: __)
+Anti-TPO: __ | FHx thyroid disease: __ | Previous workup: __
+Symptoms: Nil weight change / heat-cold intolerance / palpitations / tremor / fatigue / hair loss / neck swelling
+
+O/E:
+BP __ mmHg | HR __ bpm
+Thyroid: __ | Tremor: __ | Eyes: Nil proptosis / lid lag
+
+Please assess and advise.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "gastro-abnormal_lft",
     "name": "Gastroenterology - Abnormal Liver Function Tests",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Gastroenterology / Hepatology\nReason: Abnormal liver function tests for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Gastroenterology/Hepatology Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have abnormal liver function tests on screening bloods.\n\nALT: __ U/L (Date: __)\nAST: __ U/L\nALP: __ U/L\nGGT: __ U/L\nTotal bilirubin: __ umol/L\nAlbumin: __ g/L\nHepatitis B sAg: __\nHepatitis C Ab: __\nAlcohol intake: __\nSymptoms: Nil jaundice, nil abdominal pain, nil nausea, nil weight loss, nil pruritus\nMedications/supplements: __\nPrevious liver workup/imaging: __\n\nO/E:\nAbdomen: Soft nontender, nil hepatomegaly, nil splenomegaly, nil ascites\nStigmata of chronic liver disease: __\n\nKindly assess and advise on further workup and management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Gastroenterology / Hepatology
+Reason: Abnormal LFTs
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with abnormal LFTs on screening.
+
+ALT: __ | AST: __ | ALP: __ | GGT: __ | Bili: __ | Albumin: __ (Date: __)
+HBsAg: __ | HCV Ab: __ | Alcohol: __ | Medications/supplements: __
+Symptoms: Nil jaundice / abdominal pain / nausea / weight loss / pruritus
+Previous liver workup / imaging: __
+
+O/E:
+Abdomen: Soft, nontender, nil hepatosplenomegaly, nil ascites
+Stigmata CLD: __
+
+Please advise on further workup and management.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "gastro-elevated_afp",
     "name": "Gastroenterology - Elevated AFP",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Gastroenterology / Hepatology\nReason: Elevated AFP for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Gastroenterology/Hepatology Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have an elevated AFP on screening bloods.\n\nAFP: __ ng/mL (Date: __)\nHepatitis B sAg: __\nHepatitis B viral load: __\nHepatitis C Ab: __\nLFTs: ALT __, AST __, ALP __, GGT __, Bilirubin __, Albumin __\nAlcohol intake: __\nSymptoms: Nil abdominal pain, nil weight loss, nil jaundice, nil abdominal distension\nPrevious liver imaging: __\nFHx HCC/liver disease: __\n\nO/E:\nAbdomen: Soft nontender, nil hepatomegaly, nil splenomegaly, nil ascites\nStigmata of chronic liver disease: __\n\nKindly arrange imaging (ultrasound/CT/MRI liver) and further management to exclude hepatocellular carcinoma.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Gastroenterology / Hepatology
+Reason: Elevated AFP
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with an elevated AFP on screening.
+
+AFP: __ ng/mL (Date: __)
+HBsAg: __ | HBV VL: __ | HCV Ab: __
+LFTs: ALT __ | AST __ | ALP __ | GGT __ | Bili __ | Albumin __
+Alcohol: __ | FHx HCC / liver disease: __
+Symptoms: Nil abdominal pain / weight loss / jaundice / distension
+Previous liver imaging: __
+
+O/E:
+Abdomen: Soft, nontender, nil hepatosplenomegaly, nil ascites
+Stigmata CLD: __
+
+Please arrange imaging (USS / CT / MRI liver) to exclude HCC.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "haem-abnormal_fbc",
     "name": "Haematology - Abnormal FBC",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Haematology\nReason: Abnormal full blood count for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Haematology Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have an abnormal FBC on screening bloods.\n\nHb: __ g/dL (Date: __)\nMCV: __ fL\nMCH: __ pg\nTW: __ x10^9/L\nPlatelet: __ x10^9/L\nPeripheral blood film: __\nReticulocyte count: __\nIron studies: Ferritin __, Serum iron __, TIBC __\nB12: __\nFolate: __\nSymptoms: Nil fatigue, nil pallor, nil bruising, nil bleeding, nil recurrent infections, nil weight loss, nil night sweats, nil fever\nDiet: __\nMenstrual history (if applicable): __\n\nO/E:\nPallor: __\nLymphadenopathy: __\nHepatosplenomegaly: __\nPetechiae/purpura: __\n\nKindly assess and advise on further workup and management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Haematology
+Reason: Abnormal FBC
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with an abnormal FBC on screening.
+
+Hb: __ g/dL | MCV: __ fL | MCH: __ pg | TW: __ | Plt: __ (Date: __)
+Film: __ | Retics: __ | Iron studies: Ferritin __ / Fe __ / TIBC __
+B12: __ | Folate: __
+Diet: __ | Menstrual Hx: __
+Symptoms: Nil fatigue / pallor / bruising / bleeding / infections / weight loss / night sweats / fever
+
+O/E:
+Pallor: __ | Lymphadenopathy: __ | Hepatosplenomegaly: __ | Petechiae: __
+
+Please assess and advise.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "nephro-abnormal_renal",
     "name": "Nephrology - Abnormal Renal Function",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Nephrology\nReason: Abnormal renal function for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Nephrology Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have abnormal renal function on screening bloods.\n\nCreatinine: __ umol/L (Date: __)\neGFR: __ mL/min/1.73m2\nUrea: __ mmol/L\nPotassium: __ mmol/L\nSodium: __ mmol/L\nUrine protein:creatinine ratio: __\nUrine dipstick: Protein __, Blood __\nHbA1c: __\nBP: __ mmHg\nSymptoms: Nil oedema, nil foamy urine, nil haematuria, nil nocturia, nil fatigue\nNephrotoxic medications: NSAIDs/ACE-I/ARB/Others __\nPrevious renal workup: __\n\nO/E:\nVitals: BP __ mmHg, HR __ bpm\nOedema: __\nAbdomen: __\n\nKindly assess and advise on further workup and management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Nephrology
+Reason: Abnormal renal function
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with abnormal renal function on screening.
+
+Cr: __ umol/L | eGFR: __ mL/min/1.73m² | Urea: __ | K: __ | Na: __ (Date: __)
+UPCR: __ | Dipstick: Protein __, Blood __
+HbA1c: __ | BP: __ mmHg
+Nephrotoxins: NSAIDs / ACE-I / ARB / Other: __ | Previous renal workup: __
+Symptoms: Nil oedema / foamy urine / haematuria / nocturia / fatigue
+
+O/E:
+BP __ mmHg | HR __ bpm | Oedema: __ | Abdomen: __
+
+Please assess and advise.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "resp-abnormal_cxr",
     "name": "Respiratory Medicine - Abnormal CXR",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Respiratory Medicine\nReason: Abnormal chest X-ray for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Respiratory Medicine Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have an abnormal CXR on health screening.\n\nCXR findings: __ (Date: __)\nPrevious CXR: __ (Date: __)\nSmoking: __ (pack-years: __)\nSymptoms: Nil cough, nil haemoptysis, nil dyspnoea, nil chest pain, nil weight loss, nil night sweats, nil fever\nTB contact/exposure: __\nOccupational exposure: __\nFHx lung cancer: __\n\nO/E:\nVitals: BP __ mmHg, HR __ bpm, SpO2 __%\nChest: Air entry __, added sounds __\nLymphadenopathy: __\nClubbing: __\n\nKindly assess and arrange further imaging/workup as appropriate.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Respiratory Medicine
+Reason: Abnormal CXR
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with an abnormal CXR on health screening.
+
+CXR: __ (Date: __) | Previous CXR: __ (Date: __)
+Smoking: __ pack-years | TB contact: __ | Occupational exposure: __ | FHx lung Ca: __
+Symptoms: Nil cough / haemoptysis / dyspnoea / chest pain / weight loss / night sweats / fever
+
+O/E:
+BP __ mmHg | HR __ bpm | SpO2 __%
+Chest: Air entry __, added sounds __ | Lymphadenopathy: __ | Clubbing: __
+
+Please arrange further imaging / workup.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "uro-elevated_psa",
     "name": "Urology - Elevated PSA",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Urology\nReason: Elevated PSA for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ M __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Urology Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have an elevated PSA on screening bloods.\n\nPSA: __ ng/mL (Date: __)\nPrevious PSA: __ ng/mL (Date: __)\nLUTS: Nil hesitancy, nil poor stream, nil frequency, nil urgency, nil nocturia, nil incomplete emptying\nHaematuria: __\nBone pain: __\nWeight loss: __\nFHx prostate cancer: __\nMedications: 5-alpha reductase inhibitor __\nRecent UTI/catheterisation/DRE: __\n\nO/E:\nDRE: Prostate size __, consistency __, nodules __, tenderness __\n\nKindly assess and arrange further workup (MRI prostate/biopsy) as appropriate.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Urology
+Reason: Elevated PSA
+
+Name: __
+NRIC: __
+Age/Sex: __ M
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with an elevated PSA on screening.
+
+PSA: __ ng/mL (Date: __) | Previous PSA: __ ng/mL (Date: __)
+LUTS: Nil hesitancy / poor stream / frequency / urgency / nocturia
+Haematuria: __ | Bone pain: __ | Weight loss: __
+FHx prostate Ca: __ | 5-ARI use: __ | Recent UTI / catheter / DRE: __
+
+O/E:
+DRE: Size __, consistency __, nodules __, tenderness __
+
+Please arrange MRI prostate / biopsy as appropriate.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "uro-haematuria",
     "name": "Urology - Haematuria",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Urology\nReason: Haematuria for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Urology Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have haematuria on screening urinalysis.\n\nUrine dipstick: Blood __ (Date: __)\nUrine FEME: RBC __ /hpf, WBC __ /hpf\nUrine culture: __\nType: Microscopic/Macroscopic\nSymptoms: Nil dysuria, nil frequency, nil urgency, nil flank pain, nil suprapubic pain, nil passage of clots, nil weight loss\nSmoking: __\nAnticoagulant/antiplatelet use: __\nRecent exercise/trauma: __\nMenstruation (if applicable): __\nFHx urological malignancy/renal disease: __\n\nO/E:\nVitals: BP __ mmHg\nAbdomen: Soft nontender, nil loin tenderness, nil palpable mass\nDRE (if male): __\n\nKindly assess and arrange further workup (CT urogram/cystoscopy) as appropriate.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Urology
+Reason: Haematuria
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with haematuria on screening urinalysis.
+
+Dipstick: Blood __ (Date: __) | FEME: RBC __ /hpf, WBC __ /hpf | MSU: __
+Type: Microscopic / Macroscopic
+Smoking: __ | Anticoagulants: __ | Recent exercise / trauma: __ | Menstruation: __
+FHx urological Ca / renal disease: __
+Symptoms: Nil dysuria / frequency / urgency / flank pain / clots / weight loss
+
+O/E:
+BP __ mmHg | Abdomen: Soft, nontender, nil loin tenderness / mass
+DRE (M): __
+
+Please arrange CT urogram / cystoscopy as appropriate.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "breast-abnormal_mammogram",
     "name": "Breast Surgery - Abnormal Mammogram",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Breast Surgery / General Surgery\nReason: Abnormal mammogram for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ F __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Breast Surgery/General Surgery Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have an abnormal mammogram on health screening.\n\nMammogram findings: __ (Date: __)\nBIRADS category: __\nPrevious mammogram: __ (Date: __)\nPalpable lump: __\nBreast pain: __\nNipple discharge: __\nSkin changes: __\nFHx breast/ovarian cancer: __\nHRT/OCP use: __\nLMP: __\nParity: G__P__\n\nO/E:\nBreast: __\nAxillary lymphadenopathy: __\n\nKindly arrange further imaging/biopsy and management as appropriate.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Breast / General Surgery
+Reason: Abnormal mammogram
+
+Name: __
+NRIC: __
+Age/Sex: __ F
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with an abnormal mammogram on health screening.
+
+Mammogram: __ | BIRADS: __ (Date: __) | Previous mammogram: __ (Date: __)
+Palpable lump: __ | Breast pain: __ | Nipple discharge: __ | Skin changes: __
+FHx breast / ovarian Ca: __ | HRT / OCP: __ | LMP: __ | Parity: G__P__
+
+O/E:
+Breast: __ | Axillary LN: __
+
+Please arrange further imaging / biopsy and management.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
+  },
+  {
+    "id": "breast-abnormal_us",
+    "name": "Breast Surgery - Abnormal Ultrasound Breast",
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Breast / General Surgery
+Reason: Abnormal breast ultrasound
+
+Name: __
+NRIC: __
+Age/Sex: __ F
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with an abnormal breast ultrasound on health screening.
+
+US findings: __ | BIRADS: __ (Date: __) | Previous US / mammogram: __ (Date: __)
+Palpable lump: __ | Breast pain: __ | Nipple discharge: __ | Skin changes: __
+FHx breast / ovarian Ca: __ | HRT / OCP: __ | LMP: __ | Parity: G__P__
+
+O/E:
+Breast: __ | Axillary LN: __
+
+Please arrange further imaging / biopsy and management.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
+  },
+  {
+    "id": "gastro-gastritis",
+    "name": "Gastroenterology - Gastritis",
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Gastroenterology
+Reason: Gastritis / upper GI symptoms
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with persistent upper GI symptoms.
+
+Hx:
+Duration: __ | Symptoms: Epigastric pain / nausea / bloating / early satiety / heartburn / regurgitation
+Alarm features: Nil dysphagia / weight loss / haematemesis / melaena / PR bleeding
+H. pylori test: __ (Date: __) | H. pylori treatment: __
+NSAID / aspirin / steroid use: __ | Alcohol: __ | Smoking: __
+Previous OGD / imaging: __ (Date: __)
+Response to PPI: __
+
+O/E:
+Abdomen: Soft, epigastric tenderness __, nil guarding / mass
+
+Please arrange OGD and further management.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
+  },
+  {
+    "id": "resp-abnormal_ct_lung",
+    "name": "Respiratory Medicine - Abnormal CT Lung",
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Respiratory Medicine
+Reason: Abnormal CT lung
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with an abnormal CT lung finding.
+
+CT findings: __ (Date: __) | Previous CT / CXR: __ (Date: __)
+Smoking: __ pack-years | TB contact: __ | Occupational exposure: __ | FHx lung Ca: __
+Symptoms: Nil cough / haemoptysis / dyspnoea / chest pain / weight loss / night sweats / fever
+
+O/E:
+BP __ mmHg | HR __ bpm | SpO2 __%
+Chest: Air entry __, added sounds __ | Lymphadenopathy: __ | Clubbing: __
+
+Please advise on further workup (PET / bronchoscopy / biopsy) and management.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   },
   {
     "id": "ophth-abnormal_vision",
     "name": "Ophthalmology - Abnormal Vision / Diabetic Retinopathy",
-    "content": "REFERRAL LETTER\n\nDate: __\nReferred Specialty: Ophthalmology\nReason: Abnormal vision / diabetic eye screening for evaluation\n\nName: __\nNRIC: __\nAge/Sex: __ __ __\n\nAllergies: __\nPMHx: __\nMedications: __\n\n---\n\nDear Ophthalmology Team,\n\nThe above patient was seen at Parkway Shenton Clinic and found to have abnormal vision on health screening.\n\nVisual acuity:\nRight: __ (aided/unaided)\nLeft: __ (aided/unaided)\nColour vision: __\nRetinal photography/fundoscopy: __ (Date: __)\nDM duration: __ years\nLatest HbA1c: __ (Date: __)\nHTN: __\nSymptoms: Nil blurring, nil floaters, nil flashes, nil visual field loss, nil eye pain\nPrevious eye assessment: __ (Date: __)\nCurrent eyewear: __\n\nO/E:\nPupils: PEARL\nRed reflex: __\nFundoscopy: __\n\nKindly assess and advise on further management.\n\nThank you,\n\nDr Pin Yu Chen M62343A\nParkway Shenton Clinic"
+    "content": `REFERRAL LETTER
+
+Date: __
+Specialty: Ophthalmology
+Reason: Abnormal vision / diabetic eye screening
+
+Name: __
+NRIC: __
+Age/Sex: __ __ __
+
+Allergies: __
+PMHx: __
+Medications: __
+
+---
+
+Dear Colleague,
+
+Please review this patient with abnormal vision on health screening.
+
+VA: R __ / L __ (aided/unaided) | Colour vision: __
+Retinal photography: __ (Date: __)
+DM duration: __ yrs | HbA1c: __ (Date: __) | HTN: __
+Symptoms: Nil blurring / floaters / flashes / visual field loss / eye pain
+Previous eye review: __ (Date: __) | Eyewear: __
+
+O/E:
+Pupils: PEARL | Red reflex: __ | Fundoscopy: __
+
+Please assess and advise.
+
+Thank you,
+Dr Pin Yu Chen M62343A`
   }
 ];

@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const oeOutput = document.getElementById("oeOutput");
   const ixOutput = document.getElementById("ixOutput");
   const txOutput = document.getElementById("txOutput");
+  const txTable = document.getElementById("txTable");
   const copyHxButton = document.getElementById("copyHxButton");
   const copyOeButton = document.getElementById("copyOeButton");
   const searchResults = document.getElementById("searchResults");
@@ -54,12 +55,44 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function renderTxTable(tableData) {
+    if (!tableData) {
+      txTable.style.display = "none";
+      txTable.innerHTML = "";
+      return;
+    }
+    var intensityCls = ["", "tx-col-low", "tx-col-low", "tx-col-mod", "tx-col-mod", "tx-col-high", "tx-col-high"];
+    var html = '<table class="tx-ref-table">';
+    if (tableData.caption) {
+      html += '<caption>' + escapeHtml(tableData.caption) + '</caption>';
+    }
+    html += '<thead><tr>';
+    tableData.headers.forEach(function (h, i) {
+      var cls = i === 0 ? "tx-th-label" : (i >= 5 ? "tx-th-high" : i >= 3 ? "tx-th-mod" : "tx-th-low");
+      html += '<th class="' + cls + '">' + escapeHtml(h) + '</th>';
+    });
+    html += '</tr></thead><tbody>';
+    tableData.rows.forEach(function (row) {
+      html += '<tr>';
+      row.forEach(function (cell, i) {
+        var isEmpty = cell === "—" || cell === "";
+        var cls = i === 0 ? "tx-td-label" : isEmpty ? "tx-td-na" : (intensityCls[i] || "tx-td-val");
+        html += '<td class="' + cls + '">' + escapeHtml(cell) + '</td>';
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+    txTable.innerHTML = html;
+    txTable.style.display = "block";
+  }
+
   function selectEntry(entry) {
     dxInput.value = entry.Dx;
     hxOutput.value = entry.Hx.replace(/\n+/g, "\n");
     oeOutput.value = entry.OE.replace(/\n+/g, "\n");
     ixOutput.value = entry.Ix;
     txOutput.value = entry.Tx.replace(/\n+/g, "\n");
+    renderTxTable(entry.Table || null);
 
     // Clear editor and populate with Hx + OE + Tx
     editor.value = "";
@@ -92,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
       oeOutput.style.display = "none";
       ixOutput.style.display = "none";
       txOutput.style.display = "none";
+      renderTxTable(null);
       searchResults.style.display = "block";
     } else {
       searchResults.style.display = "none";
@@ -99,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
       oeOutput.style.display = "block";
       ixOutput.style.display = "block";
       txOutput.style.display = "block";
+      renderTxTable(null);
       hxOutput.value = "No corresponding content found.";
       oeOutput.value = "No corresponding content found.";
       ixOutput.value = "No corresponding content found.";

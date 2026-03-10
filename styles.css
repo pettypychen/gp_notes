@@ -510,6 +510,58 @@ textarea::placeholder {
   border-bottom: none;
 }
 
+/* ── Tx Reference Table (statin chart etc.) ──────── */
+#txTable {
+  margin-bottom: 8px;
+}
+
+.tx-ref-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 11px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.tx-ref-table caption {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  text-align: left;
+  padding: 4px 2px;
+  caption-side: top;
+}
+
+.tx-ref-table th {
+  padding: 5px 6px;
+  font-weight: 600;
+  font-size: 10px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.tx-th-label { background: #f8fafc; color: #475569; text-align: left; }
+.tx-th-low   { background: #f8fafc; color: #64748b; }
+.tx-th-mod   { background: #fffbeb; color: #92400e; }
+.tx-th-high  { background: #eff6ff; color: #1e40af; }
+
+.tx-ref-table td {
+  padding: 5px 6px;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.tx-ref-table tbody tr:last-child td { border-bottom: none; }
+
+.tx-td-label { text-align: left; font-weight: 500; color: #334155; background: #f8fafc; }
+.tx-td-na    { color: #cbd5e1; }
+.tx-col-low  { background: #fef3c7; color: #78350f; font-weight: 500; }
+.tx-col-mod  { background: #fef9c3; color: #713f12; font-weight: 500; }
+.tx-col-high { background: #dbeafe; color: #1e40af; font-weight: 600; }
+
 .paeds-label-cell {
   font-weight: 600;
   color: #475569;
